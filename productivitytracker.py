@@ -5,15 +5,21 @@ from plyer import notification
 
 def detect_game():
     pygame.mixer.init()
+    sound_playing = False
+
+    # List of processes associated with games
+    game_processes = ["steam.exe"]
 
     while True:
         # Check if a game is running
-        game_running = any("game" in p.name.lower() for p in psutil.process_iter(attrs=['name']))
-        
-        if game_running:
+        game_running = any(process.name().lower() in game_processes for process in psutil.process_iter(['name']))
+
+        if game_running and not sound_playing:
             start_timer()
-        else:
+            sound_playing = True
+        elif not game_running and sound_playing:
             stop_timer()
+            sound_playing = False
 
         time.sleep(1 * 60)  # Check every 5 minutes
 
@@ -34,7 +40,7 @@ def stop_timer():
     pygame.mixer.music.stop()
 
 def play_sound():
-    # Play a sound (replace 'beep.mp3' with the path to your sound file)
+    # Play a sound (replace 'alarm_clock.mp3' with the path to your sound file)
     pygame.mixer.music.load('C:\\Users\\Basil\\Downloads\\alarm_clock.mp3')
     pygame.mixer.music.play()
 
