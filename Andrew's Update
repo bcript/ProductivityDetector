@@ -1,0 +1,17 @@
+#New version of the setting_up_program() code that will not allow the same program from being added and return a message
+
+def setting_up_programs(): #works
+    while True:
+        add_programs = input("Programs to be added to watchlist (KEY 'D' when done): ")
+        if add_programs.endswith(".exe"):
+            if add_programs in app_list:
+                print("This porgram has already been added pls add a new program.")
+            else:
+                app_list.append(add_programs)
+            print(app_list)
+        elif add_programs == "D":
+            print(app_list)
+            choose_song()
+            return False
+        else:
+            print("Error")
