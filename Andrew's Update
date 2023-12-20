@@ -118,7 +118,7 @@ def send_notification():
 
 def play_sound():
     # Play a sound
-    mixer. init()
+    mixer.init()
     mixer.music.set_volume(0.2)
     mixer.music.load(user_input_path)
     mixer.music.play(-1)
