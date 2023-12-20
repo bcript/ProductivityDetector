@@ -29,3 +29,20 @@ def choose_song():
             return False
         else:
             print(f"{user_input_path} is not a valid file path.")
+#Fix the user_time input.
+def prompt_tostart(): #prompts whether they want to start the program (MAIN PAGE)
+    while True:
+        start = input("Are you ready to run the program? (Y/N): ")
+        if start == "Y":
+            user_time = input('How long before each bell rings? (give your number in seconds): ')
+            if user_time.isdigit():
+                print("Valid number")
+                #start_timer()
+            else:
+                break
+            #TBD
+        elif start == "N":
+            print("goodbye")
+            break
+        else:
+            print("goodbye")
