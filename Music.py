@@ -9,7 +9,7 @@ import os
 import pygame
 from pygame import mixer
 
-# Varible
+# Varibles
 music_list= []
 
 # Changing the look of the GUI
