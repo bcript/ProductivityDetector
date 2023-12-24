@@ -32,7 +32,7 @@ class MainMenu(ctk.CTk):
         self.add_music = ctk.CTkButton(master=self, text= "Change Music", fg_color='#0033cc', border_width=3, text_color='white', 
                                     width=400, height=105, corner_radius=50, command=lambda: open_pro('MusicSetUp.py'))
         self.run_pro = ctk.CTkButton(master=self, text= "Run helper", fg_color='#0033cc', border_width=3, text_color='white',
-                                    width=400, height=105, corner_radius=50)
+                                    width=400, height=105, corner_radius=50, command=lambda: open_pro('RunPro.py'))
         self.exit = ctk.CTkButton(master=self, text= "Exit", fg_color='#0033cc', border_width=3, text_color='white', 
                                     width=400, height=105, corner_radius=50)
 
